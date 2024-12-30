@@ -176,9 +176,9 @@ const App = () => {
             Regeln:
           </h3>
           <p>
-            1. Jede Aufgabe basiert auf einem bestimmten Ort in Santiago de Compostela.<br />
-            2. Du musst die gestellten Fragen beantworten, um weiterzukommen.<br />
-            3. Hinweise sind verfügbar, falls du feststeckst.<br />
+            1. Schicke Domi ein Beweisfoto in Form eines Selfies per WhatsApp!<br />
+            2. Internetrecherche ist strengstens untersagt!<br />
+            3. Hilfsmittel oder Hilfe von Dritten ist nicht gestattet!<br />
             4. Du kannst deine Historie einsehen, sobald du alle Aufgaben abgeschlossen hast.
           </p>
           <button
@@ -216,7 +216,7 @@ const App = () => {
             marginTop: '1rem',
             fontWeight: '700'
           }}>
-            Herzlichen Glückwunsch, Adriane!
+            Herzlichen Glückwunsch, Schneckchen!
           </h2>
           <p style={{
             color: oceanBlue.dark,
@@ -291,14 +291,14 @@ const App = () => {
               fontWeight: '700',
               color: '#D32F2F'
             }}>
-              💌 Liebesbrief an Adriane 💌
+              💌 Liebesbrief an Adi 💌
             </h2>
             <p style={{
               fontSize: '1.2rem',
               color: '#C2185B',
               fontWeight: '400'
             }}>
-              Du hast so viele wunderbare Orte in Santiago de Compostela erkundet und viele Fragen beantwortet! Deine Reise ist nicht nur ein Abenteuer, sondern auch ein Liebesbeweis an die Stadt und alles, was sie zu bieten hat. Möge dein Herz immer so weit offen bleiben wie bei dieser Reise. 
+              Du hast nun ein paar wunderbare Orte in Santiago de Compostela erkundet! Deine Jagd ist nicht nur ein Abenteuer, sondern auch ein Liebesbeweis an mich:
             </p>
           </div>
         </div>
