@@ -12,7 +12,6 @@ const App = () => {
   });
   const [rulesAccepted, setRulesAccepted] = useState(false);
   const [viewHistory, setViewHistory] = useState(false); // Zustand für Historie anzeigen
-  const [showRules, setShowRules] = useState(false); // Zustand für das Anzeigen der Regeln
 
   const oceanBlue = {
     light: '#E3F2FD',
@@ -92,353 +91,349 @@ const App = () => {
 
   return (
     <div style={{
-      maxWidth: '800px',
+      maxWidth: '900px',
       margin: '0 auto',
       padding: '20px',
       backgroundColor: '#fff',
-      minHeight: '100vh'
+      minHeight: '100vh',
+      fontFamily: "'Roboto', sans-serif"
     }}>
-      {/* Regelbutton für jederzeitigen Zugriff auf die Regeln */}
-      <button
-        onClick={() => setShowRules(true)}
-        style={{
-          position: 'absolute',
-          top: '20px',
-          right: '20px',
-          padding: '10px 20px',
-          backgroundColor: oceanBlue.dark,
-          color: 'white',
-          border: 'none',
-          borderRadius: '8px',
-          cursor: 'pointer'
-        }}
-      >
-        Regeln
-      </button>
-
-      {/* Popup für die Regeln */}
-      {showRules && (
-        <div style={{
-          position: 'fixed',
-          top: '0',
-          left: '0',
-          right: '0',
-          bottom: '0',
-          backgroundColor: 'rgba(0, 0, 0, 0.5)',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          zIndex: '1000'
+      <div style={{
+        textAlign: 'center',
+        marginBottom: '2rem',
+        color: oceanBlue.darker
+      }}>
+        <h1 style={{
+          fontSize: '2.5rem',
+          marginBottom: '1rem',
+          fontWeight: '600',
+          letterSpacing: '1px',
+          whiteSpace: 'normal', // Damit der Text umgebrochen wird, falls nötig
+          wordBreak: 'break-word' // Um lange Wörter zu brechen
         }}>
-          <div style={{
-            backgroundColor: 'white',
-            padding: '2rem',
+          💙 Adriane's Abenteuer 💙
+        </h1>
+        <p style={{
+          fontSize: '1.2rem',
+          color: oceanBlue.dark,
+          fontWeight: '400',
+          marginBottom: '1rem'
+        }}>
+          Deine Reise durch Santiago de Compostela
+        </p>
+      </div>
+
+      <div style={{
+        textAlign: 'right',
+        marginBottom: '2rem',
+        display: 'flex',
+        justifyContent: 'flex-end',
+        marginTop: '20px'
+      }}>
+        <button
+          onClick={() => setRulesAccepted(true)}
+          style={{
+            padding: '12px 24px',
+            backgroundColor: oceanBlue.medium,
+            color: 'white',
+            border: 'none',
             borderRadius: '8px',
-            maxWidth: '500px',
-            width: '100%',
-            position: 'relative'
+            fontSize: '1rem',
+            cursor: 'pointer',
+            transition: 'background-color 0.3s ease',
+            fontWeight: '600',
+          }}
+        >
+          📖 Regeln
+        </button>
+      </div>
+
+      {rulesAccepted && (
+        <div style={{
+          backgroundColor: oceanBlue.light,
+          padding: '1.5rem',
+          borderRadius: '16px',
+          boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
+          marginBottom: '2rem',
+          color: oceanBlue.darker,
+          textAlign: 'center',
+        }}>
+          <h3 style={{
+            color: oceanBlue.darker,
+            fontWeight: '700',
+            marginBottom: '1rem'
           }}>
-            <button
-              onClick={() => setShowRules(false)}
-              style={{
-                position: 'absolute',
-                top: '10px',
-                right: '10px',
-                padding: '5px 10px',
-                backgroundColor: oceanBlue.dark,
-                color: 'white',
-                border: 'none',
-                borderRadius: '50%',
-                cursor: 'pointer'
-              }}
-            >
-              X
-            </button>
-            <h2 style={{ textAlign: 'center', color: oceanBlue.darker }}>Wichtige Regeln</h2>
-            <ul style={{ textAlign: 'left', color: oceanBlue.darker }}>
-              <li><strong>Regel 1:</strong> Keine Online-Recherche erlaubt!</li>
-              <li><strong>Regel 2:</strong> Die Aufgabenlösung muss mit einem Selfie belegt und Domi via WhatsApp zugesandt werden!</li>
-              <li><strong>Regel 3:</strong> Keine externen Hilfsmittel oder Tipps von externer Quelle erlaubt. Lediglich die Hinweise innerhalb dieser App sind erlaubt.</li>
-            </ul>
-          </div>
+            Regeln:
+          </h3>
+          <p>
+            1. Jede Aufgabe basiert auf einem bestimmten Ort in Santiago de Compostela.<br />
+            2. Du musst die gestellten Fragen beantworten, um weiterzukommen.<br />
+            3. Hinweise sind verfügbar, falls du feststeckst.<br />
+            4. Du kannst deine Historie einsehen, sobald du alle Aufgaben abgeschlossen hast.
+          </p>
+          <button
+            onClick={() => setRulesAccepted(false)}
+            style={{
+              padding: '12px 24px',
+              backgroundColor: oceanBlue.dark,
+              color: 'white',
+              border: 'none',
+              borderRadius: '8px',
+              fontSize: '1rem',
+              cursor: 'pointer',
+              transition: 'background-color 0.3s ease',
+              fontWeight: '600',
+              marginTop: '1rem'
+            }}
+          >
+            Schließen
+          </button>
         </div>
       )}
 
-      {!rulesAccepted && (
-        <div style={{ padding: '2rem', backgroundColor: oceanBlue.light, borderRadius: '12px', textAlign: 'center' }}>
-          <h2 style={{ color: oceanBlue.darker }}>Wichtige Regeln</h2>
-          <ul style={{ textAlign: 'left', color: oceanBlue.darker }}>
-            <li><strong>Regel 1:</strong> Keine Online-Recherche erlaubt!</li>
-            <li><strong>Regel 2:</strong> Die Aufgabenlösung muss mit einem Selfie belegt und Domi via WhatsApp zugesandt werden!</li>
-            <li><strong>Regel 3:</strong> Keine externen Hilfsmittel oder Tipps von externer Quelle erlaubt. Lediglich die Hinweise innerhalb dieser App sind erlaubt.</li>
-          </ul>
+      {areAllTasksCompleted() ? (
+        <div style={{
+          padding: '2rem',
+          backgroundColor: oceanBlue.light,
+          borderRadius: '16px',
+          boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
+          textAlign: 'center'
+        }}>
+          <span style={{ fontSize: '48px', color: oceanBlue.dark }}>🎉</span>
+          <h2 style={{
+            color: oceanBlue.darker,
+            fontSize: '2rem',
+            marginTop: '1rem',
+            fontWeight: '700'
+          }}>
+            Herzlichen Glückwunsch, Adriane!
+          </h2>
+          <p style={{
+            color: oceanBlue.dark,
+            marginTop: '1rem',
+            fontSize: '1.1rem'
+          }}>
+            Du hast alle Aufgaben abgeschlossen! Die nächsten Monate sind in Arbeit und werden am 01. des nächsten Monats online gestellt.
+            <br />
+            Du kannst deine Historie einsehen, um die Fragen und Antworten der vergangenen Monate zu überprüfen.
+          </p>
+
           <button
-            onClick={() => setRulesAccepted(true)}
+            onClick={() => setViewHistory(!viewHistory)}
             style={{
               padding: '10px 20px',
               backgroundColor: oceanBlue.dark,
               color: 'white',
               border: 'none',
               borderRadius: '8px',
-              cursor: 'pointer'
+              cursor: 'pointer',
+              marginTop: '10px',
+              fontSize: '1.1rem',
+              letterSpacing: '1px'
             }}
           >
-            Regeln akzeptieren und fortfahren
+            {viewHistory ? 'Historie verbergen' : 'Historie anzeigen'}
           </button>
-        </div>
-      )}
 
-      {rulesAccepted && (
-        <>
-          <div style={{
-            textAlign: 'center',
-            marginBottom: '2rem',
-            color: oceanBlue.darker
-          }}>
-            <h1 style={{
-              fontSize: '2rem',
-              marginBottom: '1rem',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '10px'
+          {viewHistory && (
+            <div style={{
+              marginTop: '1rem',
+              fontSize: '1.1rem',
+              textAlign: 'left'
             }}>
-              ❤️ Adrianes Santiago Abenteuer ❤️
-            </h1>
-            <p style={{ color: oceanBlue.dark }}>
-              Deine persönliche Schnitzeljagd durch Santiago de Compostela
-            </p>
+              <h3>Historie der Antworten</h3>
+              {completedTasks.length > 0 ? (
+                completedTasks.map((taskId, idx) => {
+                  const [m, t] = taskId.split('-');
+                  const task = tasks[m][t];
+                  return (
+                    <div key={idx} style={{
+                      marginBottom: '10px',
+                      padding: '1rem',
+                      backgroundColor: '#F4F8FB',
+                      borderRadius: '8px'
+                    }}>
+                      <strong>{task.title}:</strong>
+                      <p><strong>Frage:</strong> {task.question}</p>
+                      <p><strong>Antwort:</strong> {task.answer}</p>
+                      <p><strong>Standort:</strong> {task.location}</p>
+                    </div>
+                  );
+                })
+              ) : (
+                <p>Noch keine Aufgaben abgeschlossen.</p>
+              )}
+            </div>
+          )}
+        </div>
+      ) : (
+        <>
+          <div className="months-container" style={{
+            display: 'flex',
+            gap: '15px',
+            marginBottom: '2rem',
+            overflowX: 'auto',
+            padding: '10px 0',
+            justifyContent: 'center'
+          }}>
+            {months.map((monthName, idx) => (
+              <button
+                key={idx}
+                onClick={() => {
+                  setMonth(idx);
+                  setTaskIndex(0);
+                  setUserAnswer('');
+                  setIsCorrect(false);
+                  setShowHint(false);
+                }}
+                style={{
+                  padding: '12px 25px',
+                  backgroundColor: month === idx ? oceanBlue.dark : oceanBlue.light,
+                  color: month === idx ? 'white' : oceanBlue.darker,
+                  border: 'none',
+                  borderRadius: '12px',
+                  cursor: 'pointer',
+                  minWidth: '150px',
+                  fontSize: '1.1rem',
+                  fontWeight: '500',
+                  transition: 'background-color 0.3s ease'
+                }}
+              >
+                {monthName}
+              </button>
+            ))}
           </div>
 
-          {areAllTasksCompleted() ? (
-            <div style={{
-              padding: '2rem',
-              backgroundColor: oceanBlue.light,
-              borderRadius: '12px',
-              textAlign: 'center'
+          <div style={{
+            backgroundColor: oceanBlue.light,
+            padding: '2rem',
+            borderRadius: '16px',
+            boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
+            marginBottom: '2rem',
+            textAlign: 'center'
+          }}>
+            <h3 style={{
+              color: oceanBlue.darker,
+              marginBottom: '1rem',
+              fontWeight: '600'
             }}>
-              <span style={{ fontSize: '48px' }}>🎁</span>
-              <h2 style={{ color: oceanBlue.darker, marginTop: '1rem' }}>
-                Herzlichen Glückwunsch, Adriane!
-              </h2>
-              <p style={{ marginTop: '1rem', color: oceanBlue.dark }}>
-                Du hast alle Aufgaben gemeistert! Die folgenden Monate sind noch in Arbeit und werden am 01. des nächsten Monats online gestellt.
-                <br />
-                Du kannst deine Historie einsehen, um die Fragen und Antworten der vorherigen Monate zu überprüfen.
-              </p>
-              <button
-                onClick={() => setViewHistory(!viewHistory)}
+              {currentTask.title}
+            </h3>
+
+            <p style={{
+              fontSize: '1.2rem',
+              marginBottom: '1.5rem',
+              color: oceanBlue.dark
+            }}>
+              {currentTask.question}
+            </p>
+
+            {showHint && (
+              <div style={{
+                backgroundColor: '#fff',
+                padding: '1rem',
+                borderRadius: '8px',
+                marginBottom: '1.5rem',
+                color: oceanBlue.darker
+              }}>
+                <span>💡</span>
+                <p>{currentTask.hint}</p>
+              </div>
+            )}
+
+            <div style={{ display: 'flex', gap: '15px', justifyContent: 'center' }}>
+              <input
+                type="text"
+                value={userAnswer}
+                onChange={(e) => setUserAnswer(e.target.value)}
+                placeholder="Deine Antwort..."
                 style={{
-                  padding: '10px 20px',
+                  flex: 1,
+                  padding: '12px',
+                  borderRadius: '8px',
+                  border: `1px solid ${oceanBlue.medium}`,
+                  outline: 'none',
+                  fontSize: '1rem',
+                  letterSpacing: '1px'
+                }}
+              />
+              <button
+                onClick={checkAnswer}
+                style={{
+                  padding: '12px 25px',
                   backgroundColor: oceanBlue.dark,
                   color: 'white',
                   border: 'none',
                   borderRadius: '8px',
                   cursor: 'pointer',
-                  marginTop: '10px'
+                  fontSize: '1.1rem',
+                  fontWeight: '600'
                 }}
               >
-                {viewHistory ? 'Historie verbergen' : 'Historie anzeigen'}
+                Prüfen
               </button>
-
-              {viewHistory && (
-                <div style={{ marginTop: '1rem' }}>
-                  <h3>Historie der Antworten</h3>
-                  {completedTasks.length > 0 ? (
-                    completedTasks.map((taskId, idx) => {
-                      const [m, t] = taskId.split('-');
-                      const task = tasks[m][t];
-                      return (
-                        <div key={idx} style={{ marginBottom: '10px' }}>
-                          <strong>{task.title}:</strong>
-                          <p>Frage: {task.question}</p>
-                          <p>Antwort: {task.answer}</p>
-                          <p>Standort: {task.location}</p>
-                        </div>
-                      );
-                    })
-                  ) : (
-                    <p>Noch keine Aufgaben abgeschlossen.</p>
-                  )}
-                </div>
-              )}
-
-              {/* Liebesbrief als Geschenk */}
-              <div style={{
-                marginTop: '2rem',
-                backgroundColor: oceanBlue.medium,
-                padding: '1.5rem',
-                borderRadius: '12px',
-                textAlign: 'center',
-                color: 'white'
-              }}>
-                <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>
-                  Dein romantisches Geschenk:
-                </h3>
-                <div style={{ fontSize: '1.2rem', textAlign: 'left' }}>
-                  <p>Mein geliebter Schatz,</p>
-                  <p>dieser Brief ist nur für dich – als kleines Geschenk, das dir zeigt, wie sehr du mir am Herzen liegst. Inmitten all der Abenteuer, die wir gemeinsam erleben, möchte ich dir auf diesem Weg noch einmal sagen, wie viel du für mich bedeutest. Du bist das Beste, was mir je passiert ist.</p>
-                  <p>Jeder Tag mit dir fühlt sich wie ein neues Abenteuer an, und ich könnte mir keine bessere Begleitung vorstellen, als dich an meiner Seite zu wissen. Du schenkst mir Liebe, Lachen und Wärme, und dafür bin ich dir unendlich dankbar. Du bist mein Anker, mein Licht und die Freude in meinem Leben.</p>
-                  <p>Ich hoffe, du hast genauso viel Spaß an diesem Abenteuer wie ich, und dass du beim Entpacken dieses Geschenkes genauso viel Freude empfindest wie bei jedem Moment, den wir miteinander verbringen. Die Zukunft liegt vor uns – und ich freue mich auf all die wundervollen Momente, die noch kommen werden.</p>
-                  <p>Mit all meiner Liebe,</p>
-                  <p><strong>Domi ❤️</strong></p>
-                </div>
-              </div>
             </div>
-          ) : (
-            <>
-              <div className="months-container" style={{
+
+            <button
+              onClick={() => setShowHint(!showHint)}
+              style={{
+                width: '100%',
+                padding: '12px',
+                backgroundColor: 'transparent',
+                border: `1px solid ${oceanBlue.medium}`,
+                borderRadius: '8px',
+                color: oceanBlue.dark,
+                fontWeight: '500',
+                cursor: 'pointer',
+                marginTop: '15px',
+                transition: 'background-color 0.3s ease'
+              }}
+            >
+              {showHint ? 'Hinweis verbergen' : 'Hinweis anzeigen'}
+            </button>
+
+            {isCorrect && (
+              <div style={{
+                backgroundColor: '#E8F5E9',
+                padding: '1rem',
+                borderRadius: '8px',
+                marginTop: '1rem',
                 display: 'flex',
                 gap: '10px',
-                marginBottom: '2rem',
-                overflowX: 'auto',
-                padding: '10px 0'
+                alignItems: 'start'
               }}>
-                {months.map((monthName, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => {
-                      setMonth(idx);
-                      setTaskIndex(0);
-                      setUserAnswer('');
-                      setIsCorrect(false);
-                      setShowHint(false);
-                    }}
-                    style={{
-                      padding: '10px 20px',
-                      backgroundColor: month === idx ? oceanBlue.dark : oceanBlue.light,
-                      color: month === idx ? 'white' : oceanBlue.darker,
-                      border: 'none',
-                      borderRadius: '8px',
-                      cursor: 'pointer',
-                      minWidth: '120px'
-                    }}
-                  >
-                    {monthName}
-                  </button>
-                ))}
-              </div>
-
-              <div style={{
-                backgroundColor: oceanBlue.light,
-                padding: '2rem',
-                borderRadius: '12px',
-                marginBottom: '2rem'
-              }}>
-                <h3 style={{
-                  color: oceanBlue.darker,
-                  marginBottom: '1rem'
-                }}>
-                  {currentTask.title}
-                </h3>
-
-                <p style={{ marginBottom: '1rem' }}>
-                  {currentTask.question}
-                </p>
-
-                {showHint && (
-                  <div style={{
-                    backgroundColor: 'white',
-                    padding: '1rem',
-                    borderRadius: '8px',
-                    marginBottom: '1rem',
-                    display: 'flex',
-                    gap: '10px',
-                    alignItems: 'start'
-                  }}>
-                    <span>💡</span>
-                    <p style={{ color: oceanBlue.darker }}>{currentTask.hint}</p>
-                  </div>
-                )}
-
-                <div style={{ display: 'flex', gap: '10px', marginBottom: '1rem' }}>
-                  <input
-                    type="text"
-                    value={userAnswer}
-                    onChange={(e) => setUserAnswer(e.target.value)}
-                    placeholder="Deine Antwort..."
-                    style={{
-                      flex: 1,
-                      padding: '10px',
-                      borderRadius: '8px',
-                      border: `1px solid ${oceanBlue.medium}`,
-                      outline: 'none'
-                    }}
-                  />
-                  <button
-                    onClick={checkAnswer}
-                    style={{
-                      padding: '10px 20px',
-                      backgroundColor: oceanBlue.dark,
-                      color: 'white',
-                      border: 'none',
-                      borderRadius: '8px',
-                      cursor: 'pointer'
-                    }}
-                  >
-                    Prüfen
-                  </button>
+                <span>✅</span>
+                <div>
+                  <p style={{ color: '#2E7D32', fontWeight: 'bold' }}>Richtig!</p>
+                  <p style={{ color: '#2E7D32' }}>
+                    Nächster Ort: {currentTask.location}
+                  </p>
                 </div>
-
-                <button
-                  onClick={() => setShowHint(!showHint)}
-                  style={{
-                    width: '100%',
-                    padding: '10px',
-                    backgroundColor: 'transparent',
-                    border: `1px solid ${oceanBlue.medium}`,
-                    borderRadius: '8px',
-                    color: oceanBlue.dark,
-                    cursor: 'pointer'
-                  }}
-                >
-                  {showHint ? 'Hinweis verbergen' : 'Hinweis anzeigen'}
-                </button>
-
-                {isCorrect && (
-                  <div style={{
-                    backgroundColor: '#E8F5E9',
-                    padding: '1rem',
-                    borderRadius: '8px',
-                    marginTop: '1rem',
-                    display: 'flex',
-                    gap: '10px',
-                    alignItems: 'start'
-                  }}>
-                    <span>✅</span>
-                    <div>
-                      <p style={{ color: '#2E7D32', fontWeight: 'bold' }}>Richtig!</p>
-                      <p style={{ color: '#2E7D32' }}>
-                        Nächster Ort: {currentTask.location}
-                      </p>
-                    </div>
-                  </div>
-                )}
               </div>
+            )}
+          </div>
 
-              <div style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(100px, 1fr))',
-                gap: '10px',
-                marginBottom: '2rem'
-              }}>
-                {tasks[month].map((_, idx) => (
-                  <div
-                    key={idx}
-                    style={{
-                      height: '8px',
-                      borderRadius: '4px',
-                      backgroundColor: isTaskCompleted(month, idx)
-                        ? oceanBlue.dark
-                        : idx === taskIndex
-                        ? oceanBlue.medium
-                        : '#E0E0E0'
-                    }}
-                  />
-                ))}
-              </div>
-            </>
-          )}
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))',
+            gap: '10px',
+            marginBottom: '2rem'
+          }}>
+            {tasks[month].map((_, idx) => (
+              <div
+                key={idx}
+                style={{
+                  height: '8px',
+                  borderRadius: '4px',
+                  backgroundColor: isTaskCompleted(month, idx)
+                    ? oceanBlue.dark
+                    : idx === taskIndex
+                    ? oceanBlue.medium
+                    : '#E0E0E0'
+                }}
+              />
+            ))}
+          </div>
         </>
       )}
     </div>
