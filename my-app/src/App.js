@@ -179,7 +179,6 @@ const App = () => {
             1. Schicke Domi ein Beweisfoto in Form eines Selfies per WhatsApp!<br />
             2. Internetrecherche ist strengstens untersagt!<br />
             3. Hilfsmittel oder Hilfe von Dritten ist nicht gestattet!<br />
-            4. Du kannst deine Historie einsehen, sobald du alle Aufgaben abgeschlossen hast.
           </p>
           <button
             onClick={() => setRulesAccepted(false)}
