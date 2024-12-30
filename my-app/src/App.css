@@ -207,3 +207,5 @@ button.toggle-hint:hover {
     grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Kleinere Fortschrittsbalken für mobile Geräte */
   }
 }
+
+

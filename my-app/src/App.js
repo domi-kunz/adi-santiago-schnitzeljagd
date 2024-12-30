@@ -12,6 +12,7 @@ const App = () => {
   });
   const [rulesAccepted, setRulesAccepted] = useState(false);
   const [viewHistory, setViewHistory] = useState(false); // Zustand für Historie anzeigen
+  const [attemptsLeft, setAttemptsLeft] = useState(7); // Zustand für die Versuche
 
   const oceanBlue = {
     light: '#E3F2FD',
@@ -68,7 +69,11 @@ const App = () => {
         setUserAnswer('');
         setIsCorrect(false);
         setShowHint(false);
+        setAttemptsLeft(7); // Setze die Versuche zurück, wenn die Antwort korrekt war
       }, 1500);
+    } else {
+      // Wenn die Antwort falsch ist, verringere die Anzahl der Versuche
+      setAttemptsLeft((prev) => Math.max(prev - 1, 0));
     }
   };
 
@@ -94,9 +99,14 @@ const App = () => {
       maxWidth: '900px',
       margin: '0 auto',
       padding: '20px',
-      backgroundColor: '#fff',
+      background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4))', // Farbverlauf von oben nach unten
+      fontFamily: "'Roboto', sans-serif",
+      backgroundImage: 'url("https://upload.wikimedia.org/wikipedia/commons/e/ef/Santiago_de_Compostela_2016.jpg")', // Bild von Santiago de Compostela
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundAttachment: 'fixed', // Bild bleibt beim Scrollen fixiert
       minHeight: '100vh',
-      fontFamily: "'Roboto', sans-serif"
+      color: 'white' // Schriftfarbe auf weiß setzen, um den Kontrast zu erhöhen
     }}>
       <div style={{
         textAlign: 'center',
@@ -111,7 +121,7 @@ const App = () => {
           whiteSpace: 'normal', // Damit der Text umgebrochen wird, falls nötig
           wordBreak: 'break-word' // Um lange Wörter zu brechen
         }}>
-          💙 Adriane's Abenteuer 💙
+          Adi's Abenteuer💙
         </h1>
         <p style={{
           fontSize: '1.2rem',
@@ -265,6 +275,32 @@ const App = () => {
               )}
             </div>
           )}
+
+          {/* Liebesbrief */}
+          <div style={{
+            padding: '2rem',
+            marginTop: '2rem',
+            backgroundColor: '#FFEBEE',
+            borderRadius: '16px',
+            boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
+            color: '#D32F2F',
+            textAlign: 'center'
+          }}>
+            <h2 style={{
+              fontSize: '2rem',
+              fontWeight: '700',
+              color: '#D32F2F'
+            }}>
+              💌 Liebesbrief an Adriane 💌
+            </h2>
+            <p style={{
+              fontSize: '1.2rem',
+              color: '#C2185B',
+              fontWeight: '400'
+            }}>
+              Du hast so viele wunderbare Orte in Santiago de Compostela erkundet und viele Fragen beantwortet! Deine Reise ist nicht nur ein Abenteuer, sondern auch ein Liebesbeweis an die Stadt und alles, was sie zu bieten hat. Möge dein Herz immer so weit offen bleiben wie bei dieser Reise. 
+            </p>
+          </div>
         </div>
       ) : (
         <>
@@ -341,14 +377,21 @@ const App = () => {
               </div>
             )}
 
-            <div style={{ display: 'flex', gap: '15px', justifyContent: 'center' }}>
+            <div style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '15px',
+              justifyContent: 'center',
+              alignItems: 'center'
+            }}>
               <input
                 type="text"
                 value={userAnswer}
                 onChange={(e) => setUserAnswer(e.target.value)}
                 placeholder="Deine Antwort..."
                 style={{
-                  flex: 1,
+                  width: '100%',
+                  maxWidth: '300px',
                   padding: '12px',
                   borderRadius: '8px',
                   border: `1px solid ${oceanBlue.medium}`,
@@ -367,7 +410,9 @@ const App = () => {
                   borderRadius: '8px',
                   cursor: 'pointer',
                   fontSize: '1.1rem',
-                  fontWeight: '600'
+                  fontWeight: '600',
+                  width: '100%',
+                  maxWidth: '300px'
                 }}
               >
                 Prüfen
@@ -392,47 +437,16 @@ const App = () => {
               {showHint ? 'Hinweis verbergen' : 'Hinweis anzeigen'}
             </button>
 
-            {isCorrect && (
+            {attemptsLeft > 0 && (
               <div style={{
-                backgroundColor: '#E8F5E9',
-                padding: '1rem',
-                borderRadius: '8px',
-                marginTop: '1rem',
-                display: 'flex',
-                gap: '10px',
-                alignItems: 'start'
+                marginTop: '15px',
+                color: oceanBlue.darker,
+                fontWeight: '700',
+                fontSize: '1.1rem'
               }}>
-                <span>✅</span>
-                <div>
-                  <p style={{ color: '#2E7D32', fontWeight: 'bold' }}>Richtig!</p>
-                  <p style={{ color: '#2E7D32' }}>
-                    Nächster Ort: {currentTask.location}
-                  </p>
-                </div>
+                <p>Verbleibende Versuche: {attemptsLeft}</p>
               </div>
             )}
-          </div>
-
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))',
-            gap: '10px',
-            marginBottom: '2rem'
-          }}>
-            {tasks[month].map((_, idx) => (
-              <div
-                key={idx}
-                style={{
-                  height: '8px',
-                  borderRadius: '4px',
-                  backgroundColor: isTaskCompleted(month, idx)
-                    ? oceanBlue.dark
-                    : idx === taskIndex
-                    ? oceanBlue.medium
-                    : '#E0E0E0'
-                }}
-              />
-            ))}
           </div>
         </>
       )}
