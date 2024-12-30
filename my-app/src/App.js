@@ -121,7 +121,7 @@ const App = () => {
           whiteSpace: 'normal', // Damit der Text umgebrochen wird, falls nötig
           wordBreak: 'break-word' // Um lange Wörter zu brechen
         }}>
-          Adi's Abenteuer💙
+          Adi's Santiago Jagd💙
         </h1>
         <p style={{
           fontSize: '1.2rem',
