@@ -1,211 +1,586 @@
-/* Allgemeine Stile */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #fafafa;
-  color: #333;
-}
-
-h1, h2, h3 {
-  margin: 0;
-  font-family: 'Arial', sans-serif;
-}
-
-button {
-  cursor: pointer;
-  outline: none;
-}
-
-/* Stil für den Container, der alles umfasst */
-.container {
-  max-width: 800px;
+/* Allgemeine App-Stile */
+.app-container {
+  max-width: 900px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #fff;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
+  font-family: 'Roboto', sans-serif;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/e/ef/Santiago_de_Compostela_2016.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   min-height: 100vh;
-}
-
-/* Monatliche Buttons-Stile */
-.months-container {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 2rem;
-  overflow-x: auto;  /* Ermöglicht horizontales Scrollen */
-  padding: 10px 0;
-}
-
-.months-container button {
-  padding: 10px 20px;
-  background-color: #E3F2FD;
-  color: #1565C0;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  min-width: 120px;
-  text-align: center;
-}
-
-.months-container button:hover {
-  background-color: #64B5F6;
   color: white;
 }
 
-.months-container button.active {
+.start-page-container {
+  text-align: center;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #2E3B55;
+  border-radius: 16px;
+  margin: 2rem auto;
+  max-width: 700px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.start-page-container h1 {
+  font-size: 2.5rem;
+  color: #1565C0;
+  margin-bottom: 1.5rem;
+}
+
+.start-page-container p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+.start-page-container ul {
+  text-align: left;
+  margin: 1.5rem auto;
+  padding-left: 1.5rem;
+  max-width: 600px;
+  color: #2E3B55;
+}
+
+.start-page-container ul li {
+  margin-bottom: 0.75rem;
+}
+
+.continue-button {
+  padding: 12px 25px;
+  background-color: #1565C0;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-weight: 600;
+}
+
+.continue-button:hover {
+  background-color: #1E88E5;
+  transform: scale(1.05);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #1565C0;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.header p {
+  font-size: 1.2rem;
+  color: #1E88E5;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.rules-button-container {
+  text-align: right;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.rules-button {
+  padding: 12px 24px;
+  background-color: #64B5F6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: 600;
+}
+
+.rules-button:hover {
+  background-color: #42A5F5;
+}
+
+.rules-modal {
+  background-color: #E3F2FD;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  color: #1565C0;
+  text-align: center;
+}
+
+.close-rules-button {
+  padding: 12px 24px;
+  background-color: #1E88E5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.months-container {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 2rem;
+  overflow-x: auto;
+  padding: 10px 0;
+  justify-content: center;
+}
+
+.month-button {
+  margin: 2rem;
+  padding: 12px 25px;
+  background-color: #E3F2FD;
+  color: #1565C0;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  min-width: 150px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.month-button.active {
   background-color: #1565C0;
   color: white;
 }
 
-/* Stile für die Aufgabenansicht */
 .task-container {
   background-color: #E3F2FD;
   padding: 2rem;
-  border-radius: 12px;
+  border-radius: 16px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 .task-container h3 {
   color: #1565C0;
   margin-bottom: 1rem;
+  font-weight: 600;
 }
 
 .task-container p {
-  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: #1E88E5;
 }
 
-input[type="text"] {
-  flex: 1;
-  padding: 10px;
+.hint-container {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  color: #1565C0;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+.answer-input {
+  width: 100%;
+  max-width: 300px;
+  padding: 12px;
   border-radius: 8px;
   border: 1px solid #64B5F6;
   outline: none;
+  font-size: 1rem;
+  letter-spacing: 1px;
 }
 
-button.check-answer {
-  padding: 10px 20px;
+.check-answer-button {
+  padding: 12px 25px;
   background-color: #1565C0;
   color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-}
-
-button.check-answer:hover {
-  background-color: #1E88E5;
-}
-
-button.toggle-hint {
+  font-size: 1.1rem;
+  font-weight: 600;
   width: 100%;
-  padding: 10px;
+  max-width: 300px;
+}
+
+.toggle-hint-button {
+  width: 100%;
+  padding: 12px;
   background-color: transparent;
   border: 1px solid #64B5F6;
   border-radius: 8px;
   color: #1565C0;
+  font-weight: 500;
   cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
 }
 
-button.toggle-hint:hover {
+.toggle-hint-button:hover {
   background-color: #64B5F6;
   color: white;
 }
 
-/* Stile für den Hinweisbereich */
-.hint-container {
-  background-color: white;
-  padding: 1rem;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-  display: flex;
-  gap: 10px;
-  align-items: start;
-}
-
-.hint-container span {
-  color: #1565C0;
-}
-
-.hint-container p {
-  color: #1565C0;
-}
-
-/* Stile für die Anzeige der korrekten Antwort */
-.correct-answer-container {
-  background-color: #E8F5E9;
-  padding: 1rem;
-  border-radius: 8px;
-  margin-top: 1rem;
-  display: flex;
-  gap: 10px;
-  align-items: start;
-}
-
-.correct-answer-container span {
-  color: #2E7D32;
-}
-
-.correct-answer-container p {
-  color: #2E7D32;
-}
-
-/* Stile für das Fortschrittsbalken */
 .progress-bar-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  background-color: #E0E0E0;
+  border-radius: 8px;
+  margin-top: 20px;
+  height: 20px;
+  width: 100%;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #1565C0;
+  border-radius: 8px;
+  transition: width 0.5s ease-in-out;
+}
+
+.love-letter-container {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background-color: #FFEBEE;
+  color: #C2185B;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.love-letter-container h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.love-letter-container p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+
+/* Startseite-Design */
+.start-page-container {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, #f3f4f7, #ffffff);
+  color: #2E3B55;
+  border-radius: 16px;
+  margin: 2rem auto;
+  max-width: 700px;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2);
+  font-family: 'Merriweather', serif;
+}
+
+.start-page-container h1 {
+  font-size: 3rem;
+  color: #1565C0;
+  margin-bottom: 2rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.start-page-container p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 1.5rem;
+}
+
+.start-page-container ul {
+  text-align: left;
+  margin: 1.5rem auto;
+  padding-left: 2rem;
+  max-width: 600px;
+  color: #2E3B55;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.start-page-container ul li {
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
   gap: 10px;
+}
+
+.start-page-container ul li::before {
+  content: '✔';
+  color: #1565C0;
+  font-weight: bold;
+}
+
+.start-page-container p:last-of-type {
+  font-size: 1.2rem;
+  color: #1565C0;
+  font-style: italic;
+  margin-top: 2rem;
+}
+
+.continue-button {
+  padding: 15px 30px;
+  background: linear-gradient(90deg, #1565C0, #1E88E5);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.continue-button:hover {
+  background: linear-gradient(90deg, #1E88E5, #42A5F5);
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Zusätzliche Elemente für Struktur */
+.start-page-container .section {
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+
+.start-page-container .section-title {
+  font-size: 1.5rem;
+  color: #1565C0;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #1565C0;
+  display: inline-block;
+}
+
+.start-page-container .intro {
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.start-page-container .highlight {
+  color: #C2185B;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.start-page-container .quote {
+  margin: 2rem 2rem;
+  font-size: 1.3rem;
+  color: #444;
+  font-style: italic;
+  max-width: 600px;
+  border-left: 5px solid #1565C0;
+  padding-left: 1rem;
+  line-height: 1.6;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.month-display {
+  text-align: center;
+  margin-bottom: 1rem;
+  padding: 0.1em;
+  background-color: #E3F2FD;
+  color: #1565C0;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Startseite-Design */
+.start-page-container {
+  max-width: 800px;
+  margin: 2rem 1rem;
+  padding: 3rem 2rem;
+  background: linear-gradient(145deg, rgba(21, 101, 192, 0.1), rgba(30, 136, 229, 0.1));
+  color: #2E3B55;
+  border-radius: 16px;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2);
+  font-family: 'Merriweather', serif;
+  border: 1px solid #e0e0e0;
+}
+
+
+
+.start-page-container h1 {
+  font-size: 2rem;
+  color: #1565C0;
+  margin-bottom: 1.5rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.start-page-container p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 1.5rem;
+}
+
+.start-page-container ul {
+  text-align: left;
+  margin: 1.5rem auto;
+  padding-left: 2rem;
+  max-width: 600px;
+  color: #2E3B55;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.start-page-container ul li {
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.start-page-container ul li::before {
+  content: '✔';
+  color: #1565C0;
+  font-weight: bold;
+}
+
+.start-page-container p:last-of-type {
+  font-size: 1.2rem;
+  color: #1565C0;
+  font-style: italic;
+  margin-top: 2rem;
+}
+
+.start-page-container .intro {
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #555;
   margin-bottom: 2rem;
 }
 
-.progress-bar-container div {
-  height: 8px;
-  border-radius: 4px;
+.start-page-container .highlight {
+  color: #C2185B;
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
-.progress-bar-container div.completed {
-  background-color: #1565C0;
+.start-page-container .quote {
+  margin: 2rem auto;
+  font-size: 1.3rem;
+  color: #444;
+  font-style: italic;
+  max-width: 600px;
+  border-left: 5px solid #1565C0;
+  padding-left: 1rem;
+  line-height: 1.6;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.progress-bar-container div.in-progress {
-  background-color: #64B5F6;
+/* Schaltfläche */
+.continue-button {
+  padding: 15px 30px;
+  background: linear-gradient(90deg, #1565C0, #1E88E5);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.progress-bar-container div.not-started {
-  background-color: #E0E0E0;
+.continue-button:hover {
+  background: linear-gradient(90deg, #1E88E5, #42A5F5);
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Mobile View Anpassungen */
-@media (max-width: 768px) {
-  .months-container {
-    flex-direction: column; /* Zeigt die Monate untereinander */
-    align-items: center; /* Zentriert die Buttons */
-    gap: 10px; /* Abstand zwischen den Buttons */
-    overflow-x: hidden; /* Verhindert horizontale Scrollbar */
-  }
-
-  .months-container button {
-    width: 100%; /* Die Buttons nehmen die gesamte Breite ein */
-    min-width: unset; /* Entfernt die Mindestbreite */
-    text-align: center;
-  }
-
-  .task-container {
-    padding: 1rem;
-  }
-
-  .task-container h3 {
-    font-size: 1.5rem;
-  }
-
-  .task-container p {
-    font-size: 1rem;
-  }
-
-  input[type="text"] {
-    padding: 8px;
-  }
-
-  .progress-bar-container {
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Kleinere Fortschrittsbalken für mobile Geräte */
-  }
+/* Zusätzliche Elemente für Struktur */
+.start-page-container .section {
+  margin-bottom: 2rem;
+  padding: 1rem;
 }
 
+.start-page-container .section-title {
+  font-size: 1.5rem;
+  color: #1565C0;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #1565C0;
+  display: inline-block;
+}
+
+
+/* Animationen für Antwortfeedback */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes correct {
+  from { background-color: #e0ffe0; }
+  to { background-color: transparent; }
+}
+
+@keyframes wrong {
+  from { background-color: #ffe0e0; }
+  to { background-color: transparent; }
+}
+
+/* CSS-Klassen für Animationen */
+.answer-correct {
+  animation: correct 1s ease-in-out;
+}
+
+.answer-wrong {
+  animation: wrong 1s ease-in-out, shake 0.5s ease-in-out;
+}
+
+/* Bestehende Stile */
+.app-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
+  font-family: 'Roboto', sans-serif;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/e/ef/Santiago_de_Compostela_2016.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  color: white;
+}
+
+.info-container {
+  background-color: #fffbe6;
+  color: #856404;
+  padding: 1rem;
+  margin: 1rem auto;
+  border: 1px solid #ffeeba;
+  border-radius: 8px;
+  max-width: 600px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
