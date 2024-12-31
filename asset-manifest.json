@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/adi-santiago-schnitzeljagd/static/css/main.e206d4d9.css",
+    "main.css": "/adi-santiago-schnitzeljagd/static/css/main.ea124ec5.css",
     "main.js": "/adi-santiago-schnitzeljagd/static/js/main.5c8d0ee8.js",
     "static/js/488.9c92ff38.chunk.js": "/adi-santiago-schnitzeljagd/static/js/488.9c92ff38.chunk.js",
     "index.html": "/adi-santiago-schnitzeljagd/index.html",
-    "main.e206d4d9.css.map": "/adi-santiago-schnitzeljagd/static/css/main.e206d4d9.css.map",
+    "main.ea124ec5.css.map": "/adi-santiago-schnitzeljagd/static/css/main.ea124ec5.css.map",
     "main.5c8d0ee8.js.map": "/adi-santiago-schnitzeljagd/static/js/main.5c8d0ee8.js.map",
     "488.9c92ff38.chunk.js.map": "/adi-santiago-schnitzeljagd/static/js/488.9c92ff38.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e206d4d9.css",
+    "static/css/main.ea124ec5.css",
     "static/js/main.5c8d0ee8.js"
   ]
 }
