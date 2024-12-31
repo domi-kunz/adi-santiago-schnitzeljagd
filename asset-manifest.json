@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/adi-santiago-schnitzeljagd/static/css/main.ea124ec5.css",
-    "main.js": "/adi-santiago-schnitzeljagd/static/js/main.5c8d0ee8.js",
+    "main.css": "/adi-santiago-schnitzeljagd/static/css/main.81a3ee2a.css",
+    "main.js": "/adi-santiago-schnitzeljagd/static/js/main.de927613.js",
     "static/js/488.9c92ff38.chunk.js": "/adi-santiago-schnitzeljagd/static/js/488.9c92ff38.chunk.js",
     "index.html": "/adi-santiago-schnitzeljagd/index.html",
-    "main.ea124ec5.css.map": "/adi-santiago-schnitzeljagd/static/css/main.ea124ec5.css.map",
-    "main.5c8d0ee8.js.map": "/adi-santiago-schnitzeljagd/static/js/main.5c8d0ee8.js.map",
+    "main.81a3ee2a.css.map": "/adi-santiago-schnitzeljagd/static/css/main.81a3ee2a.css.map",
+    "main.de927613.js.map": "/adi-santiago-schnitzeljagd/static/js/main.de927613.js.map",
     "488.9c92ff38.chunk.js.map": "/adi-santiago-schnitzeljagd/static/js/488.9c92ff38.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ea124ec5.css",
-    "static/js/main.5c8d0ee8.js"
+    "static/css/main.81a3ee2a.css",
+    "static/js/main.de927613.js"
   ]
 }
