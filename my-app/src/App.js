@@ -59,7 +59,7 @@ const App = () => {
     return saved ? JSON.parse(saved) : [];
   });
   const [rulesAccepted, setRulesAccepted] = useState(false);
-  const [attemptsLeft, setAttemptsLeft] = useState(7);
+  const [attemptsLeft, setAttemptsLeft] = useState(4);
   const [feedbackClass, setFeedbackClass] = useState('');
 
   const months = ["Januar", "Februar"];
@@ -77,7 +77,7 @@ const App = () => {
         title: "Praza do Obradoiro",
         question: "Wie viele Säulen hat der Haupteingang des Pazo de Raxoi?",
         answer: "8",
-        hint: "Stell dich vor den Palast und zähle die Säulen am Eingang...",
+        hint: "Stell dich vor den Palast und zähle die Säulen am Eingang...Säulen sind nicht gleich Pfeiler!",
         location: "Praza do Obradoiro"
       }
     ],
@@ -149,7 +149,7 @@ const App = () => {
         setUserAnswer('');
         setIsCorrect(false);
         setShowHint(false);
-        setAttemptsLeft(7);
+        setAttemptsLeft(4);
       }, 1500);
     }
     
@@ -188,9 +188,23 @@ const App = () => {
             <h2>💌 Liebesbrief an Adi 💌</h2>
             <p>
               Du hast nicht nur alle Aufgaben mit Bravour gemeistert,
-              sondern auch bewiesen, dass du mein liebster Abenteurer bist! Danke, dass du mit mir
-              diese Reise gemacht hast. Ich liebe dich! ❤️
-            </p>
+              sondern auch bewiesen, dass du mein liebster Abenteurer bist!
+              Auch wenn uns gerade tausende Kilometer trennen, fühle ich deine Nähe in jedem Gedanken an dich. 
+              Du bist in meinem Herzen so lebendig und präsent, dass ich manchmal das Gefühl habe, 
+              du wärst direkt hier neben mir.</p>
+              <p>
+              Ich stelle mir vor, wie du all diese neuen Orte erkundest, neue Menschen triffst und dabei die Welt mit deiner Lebensfreude bereicherst. 
+              Ich weiß, dass du dort Spuren hinterlässt – genauso wie du sie bei mir hinterlassen hast.
+              Aber ich kann es kaum erwarten, bis wir uns wiedersehen. Ich stelle mir den Moment vor, 
+              wenn ich dich endlich wieder in die Arme schließen kann, 
+              und es fühlt sich jetzt schon wie ein kleiner Sieg gegen all die Zeit und Entfernung an, 
+              die zwischen uns liegt.</p>
+              <p>
+              Bis dahin bleibe ich hier und zähle die Tage, während ich jede Nachricht, 
+              jedes Foto und jeden Gedanken von dir wie einen kleinen Schatz bewahre. 
+              Du bist mein Zuhause, egal wo wir auf der Welt gerade sind.</p>
+
+            <p>Ich liebe dich! ❤️</p>
           </div>
           <div className="info-container">
             <p>
