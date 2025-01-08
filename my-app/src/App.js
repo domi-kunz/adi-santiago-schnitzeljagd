@@ -104,11 +104,11 @@ const App = () => {
         location: "Marktplatz"
       },
       {
-        title: "Das Denkmal zählen",
-        question: "Wie viele Stufen führen zum Denkmal?",
-        answer: "20",
-        hint: "Gehe die Treppe hinauf und zähle die Stufen...",
-        location: "Denkmal"
+        title: "Museo del Pueblo Gallego",
+        question: "Wie viele Stufen hat die größte der drei Wendeltreppen?",
+        answer: "82",
+        hint: "Gehe die Treppe hinauf und zähle die Stufen...falls das nicht möglich ist, Frage einen Guide.",
+        location: "Museo del Pueblo Gallego"
       }
     ]
   ];
