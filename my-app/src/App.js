@@ -104,11 +104,11 @@ const App = () => {
         location: "Marktplatz"
       },
       {
-        title: "Das Denkmal zählen",
-        question: "Wie viele Stufen führen zum Denkmal?",
-        answer: "20",
-        hint: "Gehe die Treppe hinauf und zähle die Stufen...",
-        location: "Denkmal"
+        title: "Museo del Pueblo Gallego",
+        question: "Wie viele Stufen hat die größte der drei Wendeltreppen?",
+        answer: "82",
+        hint: "Gehe die Treppe hinauf und zähle die Stufen...falls das nicht möglich ist, Frage einen Guide.",
+        location: "Museo del Pueblo Gallego"
       }
     ]
   ];
@@ -188,9 +188,23 @@ const App = () => {
             <h2>💌 Liebesbrief an Adi 💌</h2>
             <p>
               Du hast nicht nur alle Aufgaben mit Bravour gemeistert,
-              sondern auch bewiesen, dass du mein liebster Abenteurer bist! Danke, dass du mit mir
-              diese Reise gemacht hast. Ich liebe dich! ❤️
-            </p>
+              sondern auch bewiesen, dass du mein liebster Abenteurer bist!
+              Auch wenn uns gerade tausende Kilometer trennen, fühle ich deine Nähe in jedem Gedanken an dich. 
+              Du bist in meinem Herzen so lebendig und präsent, dass ich manchmal das Gefühl habe, 
+              du wärst direkt hier neben mir.</p>
+              <p>
+              Ich stelle mir vor, wie du all diese neuen Orte erkundest, neue Menschen triffst und dabei die Welt mit deiner Lebensfreude bereicherst. 
+              Ich weiß, dass du dort Spuren hinterlässt – genauso wie du sie bei mir hinterlassen hast.
+              Aber ich kann es kaum erwarten, bis wir uns wiedersehen. Ich stelle mir den Moment vor, 
+              wenn ich dich endlich wieder in die Arme schließen kann, 
+              und es fühlt sich jetzt schon wie ein kleiner Sieg gegen all die Zeit und Entfernung an, 
+              die zwischen uns liegt.</p>
+              <p>
+              Bis dahin bleibe ich hier und zähle die Tage, während ich jede Nachricht, 
+              jedes Foto und jeden Gedanken von dir wie einen kleinen Schatz bewahre. 
+              Du bist mein Zuhause, egal wo wir auf der Welt gerade sind.</p>
+
+            <p>Ich liebe dich! ❤️</p>
           </div>
           <div className="info-container">
             <p>
