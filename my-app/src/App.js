@@ -125,35 +125,38 @@ const App = () => {
 
   const checkAnswer = () => {
     const currentTask = tasks[month][taskIndex];
-    if (!currentTask) return;
-
+    if (!currentTask) return; // Keine Antwort prüfen, wenn keine Aufgabe vorhanden ist
+  
     const isAnswerCorrect = userAnswer.toLowerCase().trim() === currentTask.answer;
     setIsCorrect(isAnswerCorrect);
     setFeedbackClass(isAnswerCorrect ? 'answer-correct' : 'answer-wrong');
-
+  
+    // Versuche verringern, auch wenn bereits 0 Versuche übrig sind
+    if (!isAnswerCorrect && attemptsLeft > 0) {
+      setAttemptsLeft(prevAttempts => prevAttempts - 1);
+    }
+  
     setTimeout(() => {
-      setFeedbackClass('');
+      setFeedbackClass(''); // Feedback zurücksetzen
     }, 1000);
-
+  
     if (isAnswerCorrect) {
       const newCompletedTasks = [...completedTasks, `${month}-${taskIndex}`];
       setCompletedTasks(newCompletedTasks);
-    
+  
       setTimeout(() => {
         if (taskIndex < tasks[month].length - 1) {
           setTaskIndex(taskIndex + 1);
         } else {
-          // Entferne diese Zeile: `setMonth(month + 1);`
-          setTaskIndex(0);
+          setTaskIndex(0); // Zurück zum ersten Task
         }
-        setUserAnswer('');
-        setIsCorrect(false);
-        setShowHint(false);
-        setAttemptsLeft(4);
+        setUserAnswer(''); // Antwort zurücksetzen
+        setIsCorrect(false); // Erfolg zurücksetzen
+        setShowHint(false); // Hinweis zurücksetzen
       }, 1500);
     }
-    
   };
+  
 
   const isTaskCompleted = (monthIndex, taskIdx) => {
     return completedTasks.includes(`${monthIndex}-${taskIdx}`);
