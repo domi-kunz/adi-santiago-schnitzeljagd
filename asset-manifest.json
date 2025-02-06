@@ -1,15 +1,17 @@
 {
   "files": {
-    "main.css": "/adi-santiago-schnitzeljagd/static/css/main.d3a06db3.css",
-    "main.js": "/adi-santiago-schnitzeljagd/static/js/main.ddb8533a.js",
-    "static/js/488.9c92ff38.chunk.js": "/adi-santiago-schnitzeljagd/static/js/488.9c92ff38.chunk.js",
+    "main.css": "/adi-santiago-schnitzeljagd/static/css/main.64c85e48.chunk.css",
+    "main.js": "/adi-santiago-schnitzeljagd/static/js/main.297cd94b.chunk.js",
+    "main.js.map": "/adi-santiago-schnitzeljagd/static/js/main.297cd94b.chunk.js.map",
+    "runtime~main.js": "/adi-santiago-schnitzeljagd/static/js/runtime~main.becea77d.js",
+    "runtime~main.js.map": "/adi-santiago-schnitzeljagd/static/js/runtime~main.becea77d.js.map",
+    "static/js/2.ae026ab9.chunk.js": "/adi-santiago-schnitzeljagd/static/js/2.ae026ab9.chunk.js",
+    "static/js/2.ae026ab9.chunk.js.map": "/adi-santiago-schnitzeljagd/static/js/2.ae026ab9.chunk.js.map",
+    "static/js/3.445915d0.chunk.js": "/adi-santiago-schnitzeljagd/static/js/3.445915d0.chunk.js",
+    "static/js/3.445915d0.chunk.js.map": "/adi-santiago-schnitzeljagd/static/js/3.445915d0.chunk.js.map",
     "index.html": "/adi-santiago-schnitzeljagd/index.html",
-    "main.d3a06db3.css.map": "/adi-santiago-schnitzeljagd/static/css/main.d3a06db3.css.map",
-    "main.ddb8533a.js.map": "/adi-santiago-schnitzeljagd/static/js/main.ddb8533a.js.map",
-    "488.9c92ff38.chunk.js.map": "/adi-santiago-schnitzeljagd/static/js/488.9c92ff38.chunk.js.map"
-  },
-  "entrypoints": [
-    "static/css/main.d3a06db3.css",
-    "static/js/main.ddb8533a.js"
-  ]
+    "precache-manifest.aedda3ad95622c960bb8d7dbe2e6626d.js": "/adi-santiago-schnitzeljagd/precache-manifest.aedda3ad95622c960bb8d7dbe2e6626d.js",
+    "service-worker.js": "/adi-santiago-schnitzeljagd/service-worker.js",
+    "static/css/main.64c85e48.chunk.css.map": "/adi-santiago-schnitzeljagd/static/css/main.64c85e48.chunk.css.map"
+  }
 }
