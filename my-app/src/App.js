@@ -59,7 +59,7 @@ const App = () => {
     return saved ? JSON.parse(saved) : [];
   });
   const [rulesAccepted, setRulesAccepted] = useState(false);
-  const [attemptsLeft, setAttemptsLeft] = useState(7);
+  const [attemptsLeft, setAttemptsLeft] = useState(4);
   const [feedbackClass, setFeedbackClass] = useState('');
 
   const months = ["Januar", "Februar"];
@@ -77,7 +77,7 @@ const App = () => {
         title: "Praza do Obradoiro",
         question: "Wie viele Säulen hat der Haupteingang des Pazo de Raxoi?",
         answer: "8",
-        hint: "Stell dich vor den Palast und zähle die Säulen am Eingang...",
+        hint: "Stell dich vor den Palast und zähle die Säulen am Eingang...Säulen sind nicht gleich Pfeiler!",
         location: "Praza do Obradoiro"
       }
     ],
@@ -149,7 +149,7 @@ const App = () => {
         setUserAnswer('');
         setIsCorrect(false);
         setShowHint(false);
-        setAttemptsLeft(7);
+        setAttemptsLeft(4);
       }, 1500);
     }
     
@@ -198,10 +198,10 @@ const App = () => {
             </p>
           </div>
           <button
-            // onClick={() => {
-            //     setMonth(1); // Übergang zum Februar nur auf Knopfdruck
-            //     setTaskIndex(0);
-            // }} WIEDER KOMMENTARE ENTFERNEN AM 01. FEBRUAR!!!
+            onClick={() => {
+                setMonth(1); // Übergang zum Februar nur auf Knopfdruck
+                 setTaskIndex(0);
+             }}
             className="month-button"
           >
             Zum Februar
@@ -228,13 +228,12 @@ const App = () => {
           <h1>Februar abgeschlossen!</h1>
           <p>Du hast auch die Aufgaben für Februar abgeschlossen!</p>
           <div className="poem-container">
-            <h2>Ein Gedicht für dich:</h2>
+            <h2>Ein Essensgutschein deiner Wahl!</h2>
             <p>
-              In den Straßen von Santiago, weit und breit,<br />
-              Hast du bewiesen Mut und Zeit.<br />
-              Deine Liebe zu mir ist klar zu sehen,<br />
-              Mit dir will ich weiter durch die Welten gehen. ❤️
-            </p>
+              Du liebst das Essen gehen genauso wie ich,<br />
+              deshalb erhältst du hiermit einen Gutschein deiner Wahl.<br />
+              Teile mir mit wo und wann und es geht auf mich. ❤️<br />
+              </p>
           </div>
         </div>
 
