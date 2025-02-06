@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/adi-santiago-schnitzeljagd/precache-manifest.aedda3ad95622c960bb8d7dbe2e6626d.js"
+  "/adi-santiago-schnitzeljagd/precache-manifest.ed7a212168e5b4b59abbb5848b8fb542.js"
 );
 
 self.addEventListener('message', (event) => {

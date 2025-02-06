@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/adi-santiago-schnitzeljagd/static/css/main.64c85e48.chunk.css",
-    "main.js": "/adi-santiago-schnitzeljagd/static/js/main.297cd94b.chunk.js",
-    "main.js.map": "/adi-santiago-schnitzeljagd/static/js/main.297cd94b.chunk.js.map",
+    "main.js": "/adi-santiago-schnitzeljagd/static/js/main.3fa4ef4e.chunk.js",
+    "main.js.map": "/adi-santiago-schnitzeljagd/static/js/main.3fa4ef4e.chunk.js.map",
     "runtime~main.js": "/adi-santiago-schnitzeljagd/static/js/runtime~main.becea77d.js",
     "runtime~main.js.map": "/adi-santiago-schnitzeljagd/static/js/runtime~main.becea77d.js.map",
     "static/js/2.ae026ab9.chunk.js": "/adi-santiago-schnitzeljagd/static/js/2.ae026ab9.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.445915d0.chunk.js": "/adi-santiago-schnitzeljagd/static/js/3.445915d0.chunk.js",
     "static/js/3.445915d0.chunk.js.map": "/adi-santiago-schnitzeljagd/static/js/3.445915d0.chunk.js.map",
     "index.html": "/adi-santiago-schnitzeljagd/index.html",
-    "precache-manifest.aedda3ad95622c960bb8d7dbe2e6626d.js": "/adi-santiago-schnitzeljagd/precache-manifest.aedda3ad95622c960bb8d7dbe2e6626d.js",
+    "precache-manifest.ed7a212168e5b4b59abbb5848b8fb542.js": "/adi-santiago-schnitzeljagd/precache-manifest.ed7a212168e5b4b59abbb5848b8fb542.js",
     "service-worker.js": "/adi-santiago-schnitzeljagd/service-worker.js",
     "static/css/main.64c85e48.chunk.css.map": "/adi-santiago-schnitzeljagd/static/css/main.64c85e48.chunk.css.map"
   }
