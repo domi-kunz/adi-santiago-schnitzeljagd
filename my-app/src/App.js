@@ -83,11 +83,11 @@ const App = () => {
     ],
     [
       {
-        title: "Das historische Museum erkunden",
-        question: "Wie viele Räume gibt es in der ersten Etage des Museums?",
-        answer: "5",
-        hint: "Zähle die Ausstellungsräume auf der ersten Etage...",
-        location: "Historisches Museum"
+        title: "Museo de Historia Natural",
+        question: "In der Ausstellung findest du eine auffällige Spalte, die mich an Gisel erinnert. Lautlose Jäger blicken dort heraus. Wie viele Augen kannst du erkennen?",
+        answer: "4",
+        hint: "Olaf könnte man auch als Baumstamm bezeichnen, zumindest immer wenn er dich sieht😏👅",
+        location: "Museo de Historia Natural"
       },
       {
         title: "Der Botanische Garten",
