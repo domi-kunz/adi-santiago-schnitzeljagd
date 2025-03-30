@@ -62,7 +62,7 @@ const App = () => {
   const [attemptsLeft, setAttemptsLeft] = useState(4);
   const [feedbackClass, setFeedbackClass] = useState('');
 
-  const months = ["Januar", "Februar"];
+  const months = ["Januar", "Februar", "April"];
 
   const tasks = [
     [
@@ -86,7 +86,7 @@ const App = () => {
         title: "Museo de Historia Natural",
         question: "In der Ausstellung findest du eine auffällige Spalte, die mich an Gisel erinnert. Lautlose Jäger blicken dort heraus. Wie viele Augen kannst du erkennen?",
         answer: "4",
-        hint: "Olaf könnte man auch als Baumstamm bezeichnen, zumindest immer wenn er dich sieht😏👅",
+        hint: "Franky könnte man auch als Baumstamm bezeichnen, zumindest immer wenn er dich sieht😏👅",
         location: "Museo de Historia Natural"
       },
       {
@@ -109,6 +109,29 @@ const App = () => {
         answer: "82",
         hint: "Gehe die Treppe hinauf und zähle die Stufen...falls das nicht möglich ist, Frage einen Guide.",
         location: "Museo del Pueblo Gallego"
+      }
+    ],
+    [
+      {
+        title: "Botafumeiro-Zeremonie",
+        question: "In der Kathedrale findet freitags eine besondere Zeremonie mit einem Weihrauchkessel statt. Von wie vielen Männern wird dieser Botafumeiro festgehalten?",
+        answer: "8",
+        hint: "Besuche die Kathedrale am Freitag zur Zeremonie und beobachte genau, wie viele Tiraboleiros den Kessel halten...",
+        location: "Kathedrale von Santiago de Compostela"
+      },
+      {
+        title: "Das Rätsel der steinernen Wächter",
+        question: "Finde den Ort, wo das Wasser fließt, bewacht von Kreaturen, die einst Reiter trugen. Zähle die Säulen, die ihre Körper tragen - nicht mehr und nicht weniger.",
+        answer: "8",
+        hint: "Suche nach einem Brunnen auf einem Platz in der Nähe eines großen religiösen Gebäudes. Die Wächter sind Tiere, die für Stärke und Geschwindigkeit bekannt sind...",
+        location: "Fuente de los Caballos, Plaza de San Martín Pinario"
+      },
+      {
+        title: "Ein Platz voller Geschichte",
+        question: "Finde den Platz, dessen Name dem spanischen Wort für Bier ähnelt. In welchem Jahr wurde dieser Platz nach einer berühmten literarischen Figur benannt?",
+        answer: "1840",
+        hint: "Cerveza (Bier) klingt ähnlich wie der Name dieses Platzes. Suche nach einer Gedenktafel oder einer Inschrift, die das Jahr der Benennung zeigt. Die Person nach der er benannt wurde, schuf den berühmtesten Ritter der spanischen Literatur...",
+        location: "Praza de Cervantes"
       }
     ]
   ];
@@ -235,8 +258,6 @@ const App = () => {
     );
   }
   
-  
-
   if (month === 1 && areAllTasksCompletedForMonth(1)) {
     return (
       <div className="app-container">
@@ -250,7 +271,69 @@ const App = () => {
               Du liebst das Essen gehen genauso wie ich,<br />
               deshalb erhältst du hiermit einen Gutschein deiner Wahl.<br />
               Teile mir mit wo und wann und es geht auf mich. ❤️<br />
-              </p>
+            </p>
+          </div>
+          <div className="info-container">
+            <p>
+              ⚠️ Die Quests für April werden freigeschaltet!
+            </p>
+          </div>
+          <button
+            onClick={() => {
+              setMonth(2); // Übergang zu April
+              setTaskIndex(0);
+            }}
+            className="month-button"
+          >
+            Zum April
+          </button>
+        </div>
+
+        <div className="progress-bar-container">
+          <div className="progress-bar" style={{ width: `100%` }}></div>
+        </div>
+        <p style={{ textAlign: 'center', marginTop: '10px', fontWeight: 'bold' }}>
+          Fortschritt: 100%
+        </p>
+      </div>
+    );
+  }
+
+  if (month === 2 && areAllTasksCompletedForMonth(2)) {
+    return (
+      <div className="app-container">
+        <div className="header">
+          <span style={{ fontSize: '48px', color: '#1565C0' }}>🎉</span>
+          <h1>April abgeschlossen!</h1>
+          <p>Du hast erfolgreich alle Aufgaben für April gemeistert!</p>
+          <div className="love-letter-container">
+            <h2>💌 Meine wundervolle Entdeckerin 💌</h2>
+            <p>
+              Mein Schatz, mit jedem Tag, den du in Spanien verbringst, bewundere ich dich mehr und mehr. 
+              Dein Mut, deine Abenteuerlust und deine Fähigkeit, dich in einer neuen Umgebung zurechtzufinden, 
+              zeigen mir immer wieder, was für eine außergewöhnliche Frau du bist.
+            </p>
+            <p>
+              Diese kleine Schnitzeljagd ist meine Art, dir zu zeigen, dass ich in Gedanken bei dir bin, 
+              während du all diese wundervollen Orte entdeckst. Ich stelle mir oft vor, wie es wäre, 
+              an deiner Seite durch die Straßen von Santiago zu schlendern, gemeinsam neue Ecken zu erkunden und 
+              Erinnerungen zu schaffen, die ein Leben lang halten.
+            </p>
+            <p>
+              Ich vermisse dich jeden Tag mehr, aber ich bin auch unendlich stolz auf dich und das Abenteuer, 
+              das du gerade erlebst. Deine Erfahrungen dort werden dich für immer bereichern, und ich freue mich 
+              schon darauf, all deine Geschichten zu hören, wenn wir uns wiedersehen.
+            </p>
+            <p>
+              Als Belohnung für diesen Monat möchte ich dir einen besonderen Tag schenken, wenn du zurück bist. 
+              Einen Tag nur für uns zwei, an dem wir alles machen können, was du dir wünschst. Denn Zeit mit dir 
+              ist das Wertvollste, was es für mich gibt.
+            </p>
+            <p>
+              Ich liebe dich mehr als Worte sagen können, und ich bin jeden Tag dankbar, dass du in 
+              meinem Leben bist - egal wie viele Kilometer zwischen uns liegen.
+            </p>
+            <p>In tiefer Liebe und Sehnsucht,<br/>Dein Domi ❤️</p>
           </div>
         </div>
 
