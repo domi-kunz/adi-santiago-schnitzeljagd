@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "30e03f8c592a3dfecbe94621ccf2e4df",
+    "revision": "2afaaf10a79e26ccf1dd63ad91837190",
     "url": "/adi-santiago-schnitzeljagd/index.html"
   },
   {
-    "revision": "cb1a163c8926fc170289",
+    "revision": "105a3cda4d3f0347ab56",
     "url": "/adi-santiago-schnitzeljagd/static/css/main.64c85e48.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/adi-santiago-schnitzeljagd/static/js/3.445915d0.chunk.js"
   },
   {
-    "revision": "cb1a163c8926fc170289",
-    "url": "/adi-santiago-schnitzeljagd/static/js/main.4ff6d3ea.chunk.js"
+    "revision": "105a3cda4d3f0347ab56",
+    "url": "/adi-santiago-schnitzeljagd/static/js/main.9c579a54.chunk.js"
   },
   {
     "revision": "824a487c58cf19609631",
